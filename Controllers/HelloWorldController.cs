@@ -20,11 +20,15 @@ namespace MvcMovie.Controllers
 
         //
         // GET: /HelloWorld/Welcome/
-        public string Welcome(string name, int ID = 1)
+        
+        //public string Welcome(string name, int ID = 1)
+        public ActionResult Welcome(string name, int level = 1)
         {
             //return "This is the Welcome action method...";
-
-            return HtmlEncoder.Default.Encode($"Hello {name}, ID is: {ID}");
+            //return HtmlEncoder.Default.Encode($"Hello {name}, ID is: {ID}");
+            ViewBag.Message = "Hello " + name;
+            ViewBag.Level = level;
+            return View();
         }
     }
 }
